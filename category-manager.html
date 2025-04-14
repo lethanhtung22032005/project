@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm</title>
+    <link rel="stylesheet" href="/Project_Frontend_Fundamental/css/category-manager.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-section">
+            <img src="/Project_Frontend_Fundamental/assets/Vector.png" alt="Logo" class="logo">
+            <h1 class="ecom">Ecommerce</h1>
+        </div>
+        <nav>
+            <div class="menu-item" id="dashboard-menu">
+                <img src="/Project_Frontend_Fundamental/assets/Home.png" alt="Home Icon">
+                <p>Thống kê</p>
+            </div>
+            <div class="menu-item" id="category-menu">
+                <img src="/Project_Frontend_Fundamental/assets/Danhmuc.png" alt="Category Icon">
+                <p>Danh mục</p>
+            </div>
+            <div class="menu-item" id="category-pro">
+                <img src="/Project_Frontend_Fundamental/assets/sanpham.png" alt="Product Icon">
+                <p>Sản phẩm</p>
+            </div>
+        </nav>
+    </div>
+
+    <div class="header">
+        <img src="/Project_Frontend_Fundamental/assets/Bell.png" alt="Notifications" class="icon">
+        <img id="logout-icon" src="/Project_Frontend_Fundamental/assets/Ellipse 6.png" alt="User Profile" class="icon">
+    </div>
+
+    <div class="content">
+        <div class="title">
+            <h1 class="category">Danh mục</h1>
+            <button class="add-category" id="myModal">Thêm danh mục</button>
+        </div>
+        <div class="controls">
+            <select id="status">
+                <option value="">Tất cả</option>
+                <option value="active">Đang hoạt động</option>
+                <option value="inactive">Ngừng hoạt động</option>
+            </select>
+            <div class="search-categories">
+                <div class="input-container">
+                    <input id="search-name" type="text" placeholder="Tìm kiếm danh mục theo tên">
+                    <img src="/Project_Frontend_Fundamental/assets/search.png" alt="Search Icon" class="search-icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã danh mục</th>
+                        <th>Tên danh mục <img src="/Project_Frontend_Fundamental/assets/arrow-down.png" alt=""></th>
+                        <th>Trạng thái</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody id="category-table-body">
+                </tbody>
+            </table>
+            <ul class="pagination" id="pagination">
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeButtonAdd">&times;</span>
+            <h2 id="modal-title">Thêm mới danh mục</h2>
+            <label for="maDanhMuc">Mã danh mục *</label><br>
+            <input type="text" id="maDanhMuc" required><br><br>
+
+            <label for="tenDanhMuc">Tên danh mục *</label><br>
+            <input type="text" id="tenDanhMuc" required><br>
+
+            <div class="trang-thai">
+                <label>Trạng thái</label>
+                <div>
+                    <input type="radio" id="dangHoatDong" name="trangThai" value="active" checked>
+                    <label for="dangHoatDong">Đang hoạt động</label>
+
+                    <input type="radio" id="ngungHoatDong" name="trangThai" value="inactive">
+                    <label for="ngungHoatDong">Ngừng hoạt động</label>
+                </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="cancelButton">Hủy</button>
+                <button class="save-button" id="saveButton">Thêm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="edit-modal">
+        <div class="modal-body">
+            <span class="close-button" id="closeButton">&times;</span>
+            <h2>Cập nhật thông tin danh mục</h2>
+            <form id="edit-form">
+                <label for="categoryCode">Mã danh mục *</label>
+                <input type="text" id="categoryCode" required>
+
+                <label for="categoryName">Tên danh mục * </label>
+                <input type="text" id="categoryName" required>
+
+                <label>Trạng thái</label>
+                <div>
+                    <input type="radio" id="statusActive" name="categoryStatus" value="active" checked>
+                    <label for="statusActive">Đang hoạt động</label>
+                    <input type="radio" id="statusInactive" name="categoryStatus" value="inactive">
+                    <label for="statusInactive">Ngừng hoạt động</label>
+                </div>
+                <button type="submit" class="save-button">Lưu</button>
+                <button type="button" class="cancel-button">Hủy</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification">
+        <span id="notification-message"></span>
+    </div>
+
+    <script src="/Project_Frontend_Fundamental/js/category-manager.js"></script>
+</body>
+
+</html>
